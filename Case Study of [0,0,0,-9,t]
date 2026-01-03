@@ -1,0 +1,25 @@
+zero = [] #number of elliptic curves of rank 0
+one = [] #number of elliptic curves of rank 1
+two = [] #number of elliptic curves of rank 2
+three = [] #number of elliptic curves of rank 3
+four = [] #number of elliptic curves of rank 4
+for t in range(-250,250):
+    E = EllipticCurve([0, 0, 0, -9, t]);
+    T = E.analytic_rank(); #calculation of the analytic rank of E through multiple derivatives 
+    if T == 0:
+        zero.append(T); 
+    elif T == 1: 
+        one.append(T); 
+    elif T == 2: 
+        two.append(T);
+    elif T == 3: 
+        three.append(T);
+    elif T == 4: 
+        four.append(T); 
+    print(E.analytic_rank()) 
+        
+print(len(zero));
+print(len(one));
+print(len(two));
+print(len(three));
+print(len(four)); 
